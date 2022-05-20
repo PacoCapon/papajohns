@@ -3,7 +3,10 @@
 class Order < ApplicationRecord
   has_many :order_product
   has_many :product, through: :order_product
-  accepts_nested_attributes_for :product, allow_destroy: true
+  belongs_to :store
+  accepts_nested_attributes_for :product
+  accepts_nested_attributes_for :store
+  
 
   attribute :total, :integer
 

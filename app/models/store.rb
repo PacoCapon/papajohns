@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class Store < ApplicationRecord
-  has_many :project_store
-  has_many :product, through: :project_store
+  has_many :product_store
+  has_many :product, through: :product_store
+  has_many :orders
 
   attribute :name, :string
   attribute :address, :text
