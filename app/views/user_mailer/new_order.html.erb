@@ -1,0 +1,9 @@
+<h1>Order: <%= @order.id %></h1>
+<ul>
+    <li>Product Total: <%= @order.total %></li>
+    <li>Creation date: <%= @order.created_at %></li>
+    <li>Store ID: <%= @order.store.id %></li>
+    <% @order.products.each do |item|%>
+      <li>Product: <%= item.name %> at <%= item.price %></li>
+   <% end %>
+</ul>

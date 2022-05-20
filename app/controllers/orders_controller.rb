@@ -19,8 +19,8 @@ class OrdersController < ApplicationController
   def create
     order_params.total = order_params.products.count
     @order = Order.new(order_params)
-
     if @order.save
+      UserMailer.new_order(order).deliver_now
       render json: @order, status: :created, location: @order
     else
       render json: @order.errors, status: :unprocessable_entity
