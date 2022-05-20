@@ -11,4 +11,9 @@ RSpec.describe Order, type: :model do
     order = Order.new(total: nil)
     expect(order).to_not be_valid
   end
+
+  it 'is not valid without products' do
+    order = Order.new(products: nil)
+    expect(order).to_not be_valid
+  end
 end

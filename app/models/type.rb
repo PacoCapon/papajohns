@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class Type < ApplicationRecord
-  belongs_to :product
+  has_many :product
 end

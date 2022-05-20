@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
 
   # POST /orders
   def create
+    order_params.total = order_params.products.count
     @order = Order.new(order_params)
 
     if @order.save
@@ -28,6 +29,7 @@ class OrdersController < ApplicationController
 
   # PATCH/PUT /orders/1
   def update
+    order_params.total = order_params.products.count
     if @order.update(order_params)
       render json: @order
     else
@@ -49,6 +51,6 @@ class OrdersController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def order_params
-    params.require(:order).permit(:total)
+    params.require(:order).permit(:total, products: [:product_id])
   end
 end
