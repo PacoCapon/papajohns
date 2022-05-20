@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-darwin21]
 
-Things you may want to cover:
+* Rails version: 5.2.8
 
-* Ruby version
 
-* System dependencies
+## TODO
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Some relations are not finished.
+* Mailing.
+* Correct Order creation.
