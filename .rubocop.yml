@@ -1,0 +1,5 @@
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+  AllCops:
+    SuggestExtensions: false

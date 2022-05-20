@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class StoresController < ApplicationController
-  before_action :set_store, only: [:show, :update, :destroy]
+  before_action :set_store, only: %i[show update destroy]
 
   # GET /stores
   def index
@@ -39,13 +41,14 @@ class StoresController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_store
-      @store = Store.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def store_params
-      params.require(:store).permit(:name, :address, :email, :phone)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_store
+    @store = Store.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def store_params
+    params.require(:store).permit(:name, :address, :email, :phone)
+  end
 end

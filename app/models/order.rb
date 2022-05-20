@@ -1,6 +1,10 @@
-class Order < ApplicationRecord
-    has_many :order_product
-    has_many :product, through: :order_product
+# frozen_string_literal: true
 
-    attribute :total, :integer
+class Order < ApplicationRecord
+  has_many :order_product
+  has_many :product, through: :order_product
+
+  attribute :total, :integer
+
+  validates_presence_of :total
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class StoresControllerTest < ActionDispatch::IntegrationTest
@@ -5,30 +7,39 @@ class StoresControllerTest < ActionDispatch::IntegrationTest
     @store = stores(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get stores_url, as: :json
     assert_response :success
   end
 
-  test "should create store" do
+  test 'should create store' do
     assert_difference('Store.count') do
-      post stores_url, params: { store: { address: @store.address, email: @store.email, name: @store.name, phone: @store.phone } }, as: :json
+      post stores_url,
+           params:
+           { store: { address: @store.address, email: @store.email, name: @store.name, phone: @store.phone } },
+           as: :json
     end
 
     assert_response 201
   end
 
-  test "should show store" do
+  test 'should show store' do
     get store_url(@store), as: :json
     assert_response :success
   end
 
-  test "should update store" do
-    patch store_url(@store), params: { store: { address: @store.address, email: @store.email, name: @store.name, phone: @store.phone } }, as: :json
+  test 'should update store' do
+    patch store_url(@store),
+          params: {
+            store: {
+              address: @store.address, email: @store.email, name: @store.name, phone: @store.phone
+            }
+          },
+          as: :json
     assert_response 200
   end
 
-  test "should destroy store" do
+  test 'should destroy store' do
     assert_difference('Store.count', -1) do
       delete store_url(@store), as: :json
     end
