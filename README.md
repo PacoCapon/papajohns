@@ -7,6 +7,7 @@
 
 ## TODO
 
-* Some relations are not finished.
-* Mailing.
-* Correct Order creation.
+* Correct Order creation
+* Some relations are not finished
+* Mailing
+
